@@ -98,7 +98,7 @@ $(document).ready(function() {
                                               $(".cloud.x1").show()
                                                             .transition({scale: [3, 3], duration: 1500});
                                               cache_div2.show()
-                                                        .transition({scale: [2.5, 2.5],
+                                                        .transition({scale: [2.5, 6],
                                                                      delay: 200,
                                                                      duration: 1000},
                                                                      complete = function() { 

@@ -3,12 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  overflow: hidden;
+  //overflow: hidden;
   height: 3000px;
 }
 
 div.intro {
+  vertical-align: top;
   height: 200px;
+}
+
+div.intro2 {
+  position: fixed;
+  width: 98.8%;
+  top: 6px;
+  vertical-align: top;
+  height: 50px;
+  background-color: #2A4D6E;
+  opacity: 0.05;
+  border-radius: 30px;
+  z-index: 101;
+}
+
+p.introp {
+  position: fixed;
+  z-index: 102;
+  top: -7px;
+  left: 2.5%;
+  vertical-align: top;
+  color: black;
+  font-family: Futura;
+  opacity: 0.2;
+  font-size: 22px;
+  text-align: center;
 }
 
 div.contentbox {
@@ -65,7 +91,7 @@ div.content3 {
   position:  absolute;
   margin-top: 10px;
   margin-left: 60px;
-  height:  800px;
+  height:  500px;
   display: none;
   width:  65%;
 }
@@ -79,11 +105,14 @@ div.content3 {
 
 
 .info {
+  vertical-align: top;
   border: 8px solid #F0F8FF;
   border-radius: 30px;
+  text-align: center;
 }
 
 div.infox {
+  vertical-align: top;
   text-align: center;
   display: inline-block;
 }
@@ -97,24 +126,53 @@ div.info.info1 {
 
 div.info.info2 {
   width: 334px;
-  height: 292px;
+  height: 193px;
   background-color: #AA4339;
 }
 
 div.info.info3 {
   width: 334px;
-  height: 292px;
+  height: 391px;
   background-color: #2B803E;
 }
 
 div.info.info4 {
   width: 334px;
-  height: 292px;
-  background-color: #AA7039;
+  height: 193px;
+  background-color: #AA6439;
 }
 
 div.info.info5 {
   width: 334px;
-  height: 292px;
-  background-color: #5D2971;
+  height: 391px;
+  background-color: #2F3F73;
+}
+
+div.info p[name="content"] {
+  position: relative;
+  top: -5%;
+  padding: 0 3%;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+div.info p.infotitle {
+  position: relative;
+  top: -3%;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: white;
+  opacity: 0.2;
+}
+
+div.info p.infotitle#title1 {
+  font-size: 40px;
+}
+
+div.info p.infotitle#title2 {
+  font-size: 24px;
+}
+
+div.info p.infotitle#title3 {
+  font-size: 30px;
 }
