@@ -1,0 +1,54 @@
+/*Time to finalise the cloud shape*/
+/*body {
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 95%);
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 75%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 75%);
+	background-repeat: no-repeat;
+	height: 1200px;
+
+}*/
+.cloud.x1 {
+	right: 43%;
+	top: 55%;
+	position: absolute;
+/*	transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);*/
+	display: none;
+	z-index: 2;
+}
+
+
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+}
+
+
+.cloud:before, .cloud:after {
+	content: '';
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+

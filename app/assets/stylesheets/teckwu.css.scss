@@ -3,25 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-
+  overflow: hidden;
+  height: 3000px;
 }
+
+div.intro {
+  height: 200px;
+}
+
 div.contentbox {
   position:  relative;
-}
-div.intro {
-  height: 60px;
+  text-align: center;
 }
 
 div.content.about {
-	margin-left: 20%;
+  margin-left: auto;
 }
+
+
 div.content {
   position: relative;
   display:  inline-block;
-  height:  200px;
+  height:  180px;
   text-align: center;
   border-radius: 30px;
   z-index: 10;
+
+  margin-left: 5px;
+  margin-right: 5px;
+
 }
 
  
@@ -29,7 +39,7 @@ div.content {
 div.content:before {
   content: '';
   display: inline-block;
-  height: 17%;
+  height: 15%;
   vertical-align: middle;
 }
 
@@ -46,7 +56,6 @@ div.contentbox2 {
 div.content2 {
   position: absolute;
   margin-top: 10px;
-  margin-left: 30px;
   height:  800px;
   display: none;
 
@@ -55,9 +64,57 @@ div.content2 {
 div.content3 {
   position:  absolute;
   margin-top: 10px;
-  margin-left: 30px;
+  margin-left: 60px;
   height:  800px;
   display: none;
-  width:  68%;
+  width:  65%;
 }
 
+.infobox {
+  position: absolute;
+  top: 900px; bottom: 0; right: 0; left: 0;
+  text-align: center;
+  margin: auto;
+}
+
+
+.info {
+  border: 8px solid #F0F8FF;
+  border-radius: 30px;
+}
+
+div.infox {
+  text-align: center;
+  display: inline-block;
+}
+
+div.info.info1 {
+  display: inline-block;
+  width: 334px;
+  height: 600px;
+  background-color: #255E69;
+}
+
+div.info.info2 {
+  width: 334px;
+  height: 292px;
+  background-color: #AA4339;
+}
+
+div.info.info3 {
+  width: 334px;
+  height: 292px;
+  background-color: #2B803E;
+}
+
+div.info.info4 {
+  width: 334px;
+  height: 292px;
+  background-color: #AA7039;
+}
+
+div.info.info5 {
+  width: 334px;
+  height: 292px;
+  background-color: #5D2971;
+}

@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+  var s = skrollr.init()
   var content_subclasses = {"about": {"color_start": "#363B7D",
                                       "color_hover": "#1D2060",
                                       "color_content":"#F0F8FF",
@@ -22,8 +23,8 @@ $(document).ready(function() {
                            };
   
   //renders first looks of content boxes
-  var content_start = function(contents, content) {
-    var content_div = $("div." + content);
+  var contentStart = function(contents, content) {
+    var content_div = $("div.content." + content);
 
     content_div.css("background-color", contents[content].color_start);
     content_div.css("border", "20px solid " + contents[content].color_start);    
@@ -32,34 +33,34 @@ $(document).ready(function() {
   }; 
   
   //render width of content boxes according to number of elements
-  var content_width = function(number_of_elements) {
-    $("div.content").width(50.0/number_of_elements + "%");
+  var contentWidth = function(number_of_elements) {
+    $("div.content").width(45.0/number_of_elements + "%");
     $("div.content2").width(55.0/number_of_elements + "%");
   };
   
   //accepts a content_subclasses and a content
-  var fade_out_deco = function(contents, content) {
-    var fade_out = function() {
-      $(this).fadeTo("fast", 0.9);
+  var fadeOutDeco = function(contents, content) {
+    var fadeOut = function() {
+      $(this).fadeTo("fast", 0.7);
       $(this).children("p").css("color", contents[content].color_hover);
       $(this).css("border", "3px solid " + contents[content].color_hover);
     };
-    return fade_out;
+    return fadeOut;
   };
   
-  var fade_in_deco = function(contents, content) {
-    var fade_in = function() {
+  var fadeInDeco = function(contents, content) {
+    var fadeIn = function() {
       $(this).fadeTo("slow", 1);
       $(this).children("p").css("color", "white");
       $(this).css("border", "20px solid " + contents[content].color_start);
     };
     
-    return fade_in;
+    return fadeIn;
   };
 
   //function for revealing drop
-  var click_drop_deco = function(contents, content) {
-    var click_drop = function() {
+  var clickDropDeco = function(contents, content) {
+    var clickDrop = function() {
       var cache_div = $('div.content2.' + content + '2');
       var cache_div2 = $('div.content3.' + content + '3');  
       
@@ -76,13 +77,10 @@ $(document).ready(function() {
       
 
       //position the drop-down element
-      margin_left =  String(contents[content].id * $('div.content').outerWidth() + 30);
+      margin_left =  String(contents[content].id * (10 + $('div.content').outerWidth()) + 60);
       cache_div.css("margin-left", margin_left + "px");
       cache_div.show();
       
-      //if first, origin ['top', 'left']
-      //if last, origin ['top', 'right']
-      //if not, origin ['center', middle']
 
       cache_div.effect('slide', 
                        {direction: "up"}, 
@@ -96,9 +94,18 @@ $(document).ready(function() {
                                              },
                                              1000,
                                              complete= function() {
-                                              cache_div.css("display", "none");
-                                              cache_div2.show();
-                                              
+                                              cache_div.hide();
+                                              $(".cloud.x1").show()
+                                                            .transition({scale: [3, 3], duration: 1500});
+                                              cache_div2.show()
+                                                        .transition({scale: [2.5, 2.5],
+                                                                     delay: 200,
+                                                                     duration: 1000},
+                                                                     complete = function() { 
+                                                                      //allow scrolling
+                                                                      $('body').css("overflow", "auto")
+                                                                     }
+                                                                    );
                                              }
                             );
                            }
@@ -129,22 +136,20 @@ $(document).ready(function() {
       //$("div.contentbox").off("click");
       return false;
     };
-    return click_drop;
+    return clickDrop;
   };
   
-  
   //set widthbox width according to number of elements
-  content_width(Object.keys(content_subclasses).length);
+  contentWidth(Object.keys(content_subclasses).length);
   
   for (var k in content_subclasses) {
-    content_start(content_subclasses, k); //div.k
-    $("div.content." + k).hover(fade_out_deco(content_subclasses, k),
-                       fade_in_deco(content_subclasses, k)
+    contentStart(content_subclasses, k); //div.k
+    $("div.content." + k).hover(fadeOutDeco(content_subclasses, k),
+                       fadeInDeco(content_subclasses, k)
                       );
-    $("div.contentbox").one("click", "div.content." + k, handler= click_drop_deco(content_subclasses, k));
+    $("div.contentbox").one("click", "div.content." + k, handler= clickDropDeco(content_subclasses, k));
   }
 
-  
    
 });
 
