@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'test/index'
+
   get 'teckwu/index'
   root 'teckwu#index'
 

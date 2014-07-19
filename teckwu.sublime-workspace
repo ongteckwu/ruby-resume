@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"cloud",
+				"cloud_scale"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"ba",
+				"bar_percentage"
+			],
+			[
+				"progre",
+				"progress_bar_100"
+			],
+			[
+				"progress",
+				"progressbar"
+			],
+			[
+				"progr",
+				"progress_bar"
+			],
+			[
+				"word",
+				"wordcloud_out"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"clouds",
+				"clouds_cache"
+			],
+			[
 				"border",
 				"border-radius"
 			],
@@ -36,18 +80,29 @@
 	"buffers":
 	[
 		{
-			"file": ".gitignore",
+			"file": "app/views/teckwu/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 521,
+				"buffer_size": 5192,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/teckwu/index.html.erb",
+			"file": "app/views/test/index.html.haml",
 			"settings":
 			{
-				"buffer_size": 813,
+				"buffer_size": 412,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Rails.application.routes.draw do\n  get 'test/index'\n  get 'teckwu/index'\n  root 'teckwu#index'\n\n  # The priority is based upon order of creation: first created -> highest priority.\n  # See how all your routes lay out with \"rake routes\".\n\n  # You can have the root of your site routed with \"root\"\n  # root 'welcome#index'\n\n  # Example of regular route:\n  #   get 'products/:id' => 'catalog#view'\n\n  # Example of named route that can be invoked with purchase_url(id: product.id)\n  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase\n\n  # Example resource route (maps HTTP verbs to controller actions automatically):\n  #   resources :products\n\n  # Example resource route with options:\n  #   resources :products do\n  #     member do\n  #       get 'short'\n  #       post 'toggle'\n  #     end\n  #\n  #     collection do\n  #       get 'sold'\n  #     end\n  #   end\n\n  # Example resource route with sub-resources:\n  #   resources :products do\n  #     resources :comments, :sales\n  #     resource :seller\n  #   end\n\n  # Example resource route with more complex sub-resources:\n  #   resources :products do\n  #     resources :comments\n  #     resources :sales do\n  #       get 'recent', on: :collection\n  #     end\n  #   end\n\n  # Example resource route with concerns:\n  #   concern :toggleable do\n  #     post 'toggle'\n  #   end\n  #   resources :posts, concerns: :toggleable\n  #   resources :photos, concerns: :toggleable\n\n  # Example resource route within a namespace:\n  #   namespace :admin do\n  #     # Directs /admin/products/* to Admin::ProductsController\n  #     # (app/controllers/admin/products_controller.rb)\n  #     resources :products\n  #   end\nend\n",
+			"file": "config/routes.rb",
+			"file_size": 1665,
+			"file_write_time": 130501602250000000,
+			"settings":
+			{
+				"buffer_size": 1664,
 				"line_ending": "Unix"
 			}
 		},
@@ -63,18 +118,6 @@
 			}
 		},
 		{
-			"contents": "/*Time to finalise the cloud shape*/\n.cloud {\n	width: 200px; height: 60px;\n	background: #fff;\n	\n	border-radius: 200px;\n	-moz-border-radius: 200px;\n	-webkit-border-radius: 200px;\n	\n	position: relative;\n	top: 200px; right: -50px;\n}\n\n.cloud:before, .cloud:after {\n	content: '';\n	position: absolute; \n	background: #fff;\n	width: 100px; height: 80px;\n	position: absolute; top: -15px; left: 10px;\n	\n	border-radius: 100px;\n	-moz-border-radius: 100px;\n	-webkit-border-radius: 100px;\n	\n	-webkit-transform: rotate(30deg);\n	transform: rotate(30deg);\n	-moz-transform: rotate(30deg);\n}\n\n.cloud:after {\n	width: 120px; height: 120px;\n	top: -55px; left: auto; right: 15px;\n}\n\n",
-			"file": "app/assets/stylesheets/cloud.css.scss",
-			"file_size": 660,
-			"file_write_time": 130498255250000000,
-			"settings":
-			{
-				"buffer_size": 659,
-				"line_ending": "Unix",
-				"name": "body {"
-			}
-		},
-		{
 			"file": "/Users/ongteckwu/teckwu_rails/testx/config/application.rb",
 			"settings":
 			{
@@ -83,10 +126,24 @@
 			}
 		},
 		{
-			"file": "app/assets/javascripts/teckwu.js",
+			"contents": "\n$(document).ready(function() {\n  var s = skrollr.init()\n////////// WORD CLOUD /////////////////\n  var word_cloud_list = [[\"Javascript\", 22],\n                         [\"Ruby\", 20],\n                         [\"Python\", 25],\n                         [\"Selenium\", 6],\n                         [\"Pygame\", 16],\n                         [\"SpriteBuilder\", 10],\n                         [\"Algorithms\", 7],\n                         [\"Web Design\", 18],\n                         [\"Web Frameworks\", 12],\n                         [\"GAE\", 10],\n                         [\"Django\", 16],\n                         [\"Rails\", 20],\n                         [\"BDD\", 10],\n                         [\"TDD\", 10],\n                         [\"Rspec\", 15],\n                         [\"JQuery\", 17],\n                         [\"JQuery-UI\", 15],\n                         [\"Skrollr.js\", 5],\n                         [\"CSS\", 10],\n                         [\"HTML\", 15],\n                         [\"HAML\", 12],\n                         [\"Cucumber\", 10],\n                         [\"Objective C\", 20],\n                         [\"iOS\", 15],\n                         [\"XCode\", 12],\n                         [\"Databases\", 12],\n                         [\"Machine Learning\", 13],\n                         [\"Artificial Intelligence\", 8],\n                         [\"Unittest\", 5],\n                         [\"Rapid Prototyping\", 6],\n                         [\"C++\", 12],\n                         [\"C\", 10],\n                         [\"Git\", 12]];\n\n  var my_canvas = document.getElementById(\"wordcloud\");\n  my_canvas.width = 1000;\n  my_canvas.height = 600;\n  //whether cloud is out already\n  var wordcloud_out = false;\n  var scrolled = false;\n  var progress_bar_100 = $(\"body\").height() - $(window).height();\n  $(document).on(\"scroll\", document, function() {\n    if (!scrolled) {\n      $(\".introp.progressbar\").css(\"left\", \"48.8%\");\n      scrolled = !scrolled;\n    }\n    var from_top = $(\"#wordcloud\").offset().top - $(document).scrollTop();\n    var bar_percentage = ($(document).scrollTop()/progress_bar_100) * 100;\n\n    //round to 100 if hit 101\n    if (bar_percentage < 0) {\n      bar_percentage = 0;\n    }\n    else if (bar_percentage > 100) {\n      bar_percentage = 100;\n    }\n    //String it\n    bar_percentage = Math.round(bar_percentage);\n    if (bar_percentage === 100) {\n      $(\".introp.progressbar\").css(\"left\", \"48.2%\");\n      scrolled = !scrolled;\n    }\n    bar_percentage = bar_percentage + \"%\"\n    $(\".introp.progressbar\").html(bar_percentage);\n\n    if ((from_top < 300 && from_top > -300) \n          && !wordcloud_out) { \n      WordCloud(my_canvas, \n                {list: word_cloud_list,\n                 fontFamily: \"Futura\",\n                 weightFactor: 5,\n                 shape: \"square\",\n                 minSize: 10,\n                 rotateRatio: 0.1,\n                 wait: 30,\n                 backgroundColor : \"#F0F8FF\"});\n      wordcloud_out = !wordcloud_out;\n   }\n\n   if ((from_top < -700 || from_top > 700)\n        && wordcloud_out) {\n    my_canvas.width = 1000;\n    wordcloud_out = !wordcloud_out;\n   }\n  });\n\n////////// CONTENT //////////////\n  var content_subclasses = {\"about\": {\"color_start\": \"#363B7D\",\n                                      \"color_hover\": \"#1D2060\",\n                                      \"color_content\":\"#F0F8FF\",\n                                      \"id\": 0\n                                     },\n                            \"projects\": {\"color_start\": \"#993460\",\n                                         \"color_hover\": \"#75133E\",\n                                         \"color_content\": \"#FEEFFF\",\n                                         \"id\": 1\n                                        },\n                            \"reading_list\": {\"color_start\": \"#72A438\",\n                                             \"color_hover\": \"#4C7D14\",\n                                             \"color_content\": \"#D9F8A9\",\n                                             \"id\": 2\n                                            }\n                            /*\"test\": {\"color_start\": \"B49339\",\n                                       \"color_hover\": \"7E5F10\",\n                                       \"color_content\":\"#FF8EFF\"}\n                           */\n                           };\n  \n  //renders first looks of content boxes\n  var contentStart = function(contents, content) {\n    var content_div = $(\"div.content.\" + content);\n\n    content_div.css(\"background-color\", contents[content].color_start);\n    content_div.css(\"border\", \"20px solid \" + contents[content].color_start);    \n    $('div.' + content + '2').css(\"background-color\", contents[content].color_content);\n    $('div.' + content + '3').css(\"background-color\", contents[content].color_content);\n  }; \n  \n  //render width of content boxes according to number of elements\n  var contentWidth = function(number_of_elements) {\n    $(\"div.content\").width(45.0/number_of_elements + \"%\");\n    $(\"div.content2\").width(55.0/number_of_elements + \"%\");\n  };\n  \n  //accepts a content_subclasses and a content\n  var fadeOutDeco = function(contents, content) {\n    var fadeOut = function() {\n      $(this).fadeTo(\"fast\", 0.7);\n      $(this).children(\"p\").css(\"color\", contents[content].color_hover);\n      $(this).css(\"border\", \"3px solid \" + contents[content].color_hover);\n    };\n    return fadeOut;\n  };\n  \n  var fadeInDeco = function(contents, content) {\n    var fadeIn = function() {\n      $(this).fadeTo(\"slow\", 1);\n      $(this).children(\"p\").css(\"color\", \"white\");\n      $(this).css(\"border\", \"20px solid \" + contents[content].color_start);\n    };\n    \n    return fadeIn;\n  };\n\n  //function for revealing drop\n  var clickDropDeco = function(contents, content) {\n    var clickDrop = function() {\n      var cache_div = $('div.content2.' + content + '2');\n      var cache_div2 = $('div.content3.' + content + '3');  \n      \n      var action;\n      if (contents[content].id === 0) {\n        action = \"size\";\n      }\n      else if (contents[content].id !== Object.keys(content_subclasses).length - 1) {\n        action = \"fold\";\n      }\n      else {\n        action = \"drop\";\n      } \n      \n\n      //position the drop-down element\n      margin_left =  String(contents[content].id * (10 + $('div.content').outerWidth()) + 60);\n      cache_div.css(\"margin-left\", margin_left + \"px\");\n      cache_div.show();\n      \n\n      cache_div.effect('slide', \n                       {direction: \"up\"}, \n                       1000, \n                       complete= function() {\n                         if (action === \"size\") {\n                         //resize about2, reveal about3, then hide about2                                           \n                           cache_div.effect('size',\n                                            {to:{width:cache_div2.width()},\n                                             scale: \"content\"\n                                             },\n                                             1000,\n                                             complete= function() {\n                                              cache_div.hide();\n                                              $(\".cloud.x1\").show()\n                                                            .transition({scale: [3, 3], duration: 1500});\n                                              cache_div2.show()\n                                                        .transition({scale: [2.5, 10],\n                                                                     delay: 200,\n                                                                     duration: 1000},\n                                                                     complete = function() { \n                                                                      //allow scrolling\n                                                                      $('body').css(\"overflow\", \"auto\")\n                                                                      //reveal progressbar percentage\n                                                                      $('.introp.progressbar').show();\n                                                                     }\n                                                                    );\n                                             }\n                            );\n                           }\n                         else if (action === \"fold\") {\n                           cache_div.hide('fold', \n                                          {size: \"30\",\n                                           horizFirst: false},\n                                          1000,\n                                             complete= function() {\n                                              cache_div2.show('fold',\n                                                              {size: \"30\"},\n                                                             1000);\n                                              \n                                             });\n                         }\n                           else if (action === \"drop\") {\n                             cache_div.hide('drop',\n                                            {direction: \"right\"},\n                                            1000,\n                                            complete= function(){\n                                              cache_div2.show('drop',\n                                                              {direction: \"right\"},\n                                                             1000);\n                                            });\n                           }\n                       }\n        );\n      //$(\"div.contentbox\").off(\"click\");\n      return false;\n    };\n    return clickDrop;\n  };\n  \n  //set widthbox width according to number of elements\n  contentWidth(Object.keys(content_subclasses).length);\n  \n  for (var k in content_subclasses) {\n    contentStart(content_subclasses, k); //div.k\n    $(\"div.content.\" + k).hover(fadeOutDeco(content_subclasses, k),\n                       fadeInDeco(content_subclasses, k)\n                      );\n    $(\"div.contentbox\").one(\"click\", \"div.content.\" + k, handler= clickDropDeco(content_subclasses, k));\n  }\n\n//////////// Parallax clouds set-up //////////////\n});\n\n",
+			"file": "app/assets/javascripts/teckwu_library/teckwu.js",
+			"file_size": 10135,
+			"file_write_time": 130500873260000000,
 			"settings":
 			{
-				"buffer_size": 7381,
+				"buffer_size": 10242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "$(document).ready(function() {\n	var s = skrollr.init();\n	//scale, left, top\n	cloud_scale = [1.6, 1.5, 1.55, 0.8, 1.33,\n  				   0.8, 2, 2.1, 1.4, 1.9,\n  				   0.9, 2.5, 0.6, 1.5, 1.4,\n  				   1.8, 1.7, 0.86, 1.3, 1.8];\n	for (var i = 0; i < cloud_scale.length; i++) {\n		$('#cloud' + (i + 1)).transition({scale: [cloud_scale[i], \n								   				  cloud_scale[i]],\n						   				  duration: 0});\n\n\n	}\n\n});",
+			"file": "app/assets/javascripts/test_library/test.js",
+			"file_size": 403,
+			"file_write_time": 130501719790000000,
+			"settings":
+			{
+				"buffer_size": 403,
 				"line_ending": "Unix"
 			}
 		},
@@ -94,23 +151,40 @@
 			"file": "app/assets/javascripts/application.js",
 			"settings":
 			{
-				"buffer_size": 686,
+				"buffer_size": 666,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/application.rb",
+			"file": "app/assets/stylesheets/teckwu_css/teckwu.css.scss",
 			"settings":
 			{
-				"buffer_size": 1059,
+				"buffer_size": 3466,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/teckwu.css.scss",
+			"file": "app/assets/stylesheets/teckwu_css/cloud.css.scss",
 			"settings":
 			{
-				"buffer_size": 1052,
+				"buffer_size": 883,
+				"line_ending": "Unix",
+				"name": "body {"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/test_css/test.css.scss",
+			"settings":
+			{
+				"buffer_size": 317,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/test_controller.rb",
+			"settings":
+			{
+				"buffer_size": 565,
 				"line_ending": "Unix"
 			}
 		}
@@ -118,20 +192,52 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 87.0,
+		"height": 127.0,
 		"selected_items":
 		[
 			[
-				"jsl",
-				"JSLint"
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"ssjav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"PAC",
+				"Preferences: Browse Packages"
+			],
+			[
+				"REMO",
+				"Package Control: Remove Package"
+			],
+			[
+				"rmeov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"pacage",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"sscss",
-				"Set Syntax: CSS"
+				"jsl",
+				"JSLint"
 			],
 			[
 				"ssr",
@@ -142,7 +248,7 @@
 				"Set Syntax: Python"
 			]
 		],
-		"width": 467.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -163,6 +269,27 @@
 	},
 	"file_history":
 	[
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/controllers/test_controller.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_bundle.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/test_bundle.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/test_library/test.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/test_bundle.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/teckwu_bundle.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/application.css",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_library/index.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/config/application.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/utilities_library/wordcloud.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_bundle",
+		"/Users/ongteckwu/teckwu_rails/teckwu/Rakefile",
+		"/Users/ongteckwu/teckwu_rails/teckwu/README.rdoc",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/wordcloud.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/_main.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/.gitignore",
+		"/Users/ongteckwu/Downloads/Unknown 2/css/style.css",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/skroll.min.js",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/fonts/AlphaClouds.ttf",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/AlphaClouds.ttf",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/transit.js",
 		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/JSLint/JSLint.sublime-settings",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/cloud.css.scc",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/cloud",
@@ -175,7 +302,6 @@
 		"/Users/ongteckwu/teckwu_rails/teckwu/config/routes.rb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/Gemfile.lock",
 		"/Users/ongteckwu/teckwu_rails/teckwu/Gemfile",
-		"/Users/ongteckwu/teckwu_rails/teckwu/config/application.rb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/config/environments/production.rb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/bin/spring",
 		"/Users/ongteckwu/ruby_saas/bdd-cucumber/rottenpotatoes/features/step_definitions/movie_steps.rb",
@@ -203,7 +329,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
@@ -213,6 +339,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"clouds",
+			"4px",
+			";\n",
 			"#f2f9fe",
 			"white",
 			"follow"
@@ -233,29 +362,89 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": ".gitignore",
+					"file": "app/views/teckwu/index.html.erb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 521,
+						"buffer_size": 5192,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								341,
-								341
+								154,
+								154
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 121.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/test/index.html.haml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "config/routes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1664,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -265,35 +454,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "app/views/teckwu/index.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 813,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								519,
-								519
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 252.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "app/controllers/teckwu_controller.rb",
 					"semi_transient": false,
 					"settings":
@@ -317,37 +478,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/stylesheets/cloud.css.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 659,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								56,
-								56
-							]
-						],
-						"settings":
-						{
-							"auto_name": "body {",
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 144.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -377,30 +508,30 @@
 						"translation.y": 86.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 5,
-					"file": "app/assets/javascripts/teckwu.js",
+					"file": "app/assets/javascripts/teckwu_library/teckwu.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7381,
+						"buffer_size": 10242,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6897,
-								6900
+								697,
+								697
 							]
 						],
 						"settings":
@@ -409,28 +540,28 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 3.0,
-						"translation.y": 2036.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
-					"file": "app/assets/javascripts/application.js",
+					"file": "app/assets/javascripts/test_library/test.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 686,
+						"buffer_size": 403,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								444,
-								444
+								163,
+								163
 							]
 						],
 						"settings":
@@ -441,60 +572,118 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "config/application.rb",
+					"file": "app/assets/javascripts/application.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1059,
+						"buffer_size": 666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								306,
-								306
+								666,
+								666
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 8,
-					"file": "app/assets/stylesheets/teckwu.css.scss",
+					"file": "app/assets/stylesheets/teckwu_css/teckwu.css.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1052,
+						"buffer_size": 3466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								253,
-								253
+								252,
+								252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2149.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/assets/stylesheets/teckwu_css/cloud.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"auto_name": "body {",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 313.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/assets/stylesheets/test_css/test.css.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								317,
+								317
 							]
 						],
 						"settings":
@@ -511,8 +700,37 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 11,
+					"file": "app/controllers/test_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								416,
+								416
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 123.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -562,15 +780,15 @@
 		"rows":
 		[
 			0.0,
-			0.43808886353,
-			0.929775280899,
+			0.333333333333,
+			0.666666666667,
 			1.0
 		]
 	},
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 25.0
+		"height": 100.0
 	},
 	"output.find_results":
 	{
@@ -600,11 +818,11 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 370.0,
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 392.0
 	},
 	"settings":
 	{

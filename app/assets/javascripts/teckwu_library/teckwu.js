@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
   var s = skrollr.init()
-  //word cloud
+////////// WORD CLOUD /////////////////
   var word_cloud_list = [["Javascript", 22],
                          ["Ruby", 20],
                          ["Python", 25],
@@ -32,12 +32,17 @@ $(document).ready(function() {
                          ["Artificial Intelligence", 8],
                          ["Unittest", 5],
                          ["Rapid Prototyping", 6],
-                         ["C++", 12],
-                         ["C", 10],
-                         ["Git", 12]];
+                         ["C++", 20],
+                         ["C", 12],
+                         ["Git", 12],
+                         ["Octave", 16],
+                         ["Word", 8],
+                         ["Excel", 3],
+                         ["Virtualenv", 7],
+                         ["GAE", 14]];
 
   var my_canvas = document.getElementById("wordcloud");
-  my_canvas.width = 1000;
+  my_canvas.width = 1200;
   my_canvas.height = 600;
   //whether cloud is out already
   var wordcloud_out = false;
@@ -45,7 +50,7 @@ $(document).ready(function() {
   var progress_bar_100 = $("body").height() - $(window).height();
   $(document).on("scroll", document, function() {
     if (!scrolled) {
-      $(".introp.progressbar").css("left", "48.8%");
+      $("#introp_progressbar").css("left", "48.8%");
       scrolled = !scrolled;
     }
     var from_top = $("#wordcloud").offset().top - $(document).scrollTop();
@@ -61,23 +66,23 @@ $(document).ready(function() {
     //String it
     bar_percentage = Math.round(bar_percentage);
     if (bar_percentage === 100) {
-      $(".introp.progressbar").css("left", "48.2%");
+      $("#introp_progressbar").css("left", "48.2%");
       scrolled = !scrolled;
     }
     bar_percentage = bar_percentage + "%"
-    $(".introp.progressbar").html(bar_percentage);
+    $("#introp_progressbar").html(bar_percentage);
 
     if ((from_top < 300 && from_top > -300) 
           && !wordcloud_out) { 
       WordCloud(my_canvas, 
                 {list: word_cloud_list,
                  fontFamily: "Futura",
-                 weightFactor: 5,
+                 weightFactor: 4.5,
                  shape: "square",
                  minSize: 10,
-                 rotateRatio: 0.1,
+                 rotateRatio: 0.2,
                  wait: 30,
-                 backgroundColor : "#F0F8FF"});
+                 backgroundColor : "lightblue"});
       wordcloud_out = !wordcloud_out;
    }
 
@@ -87,9 +92,11 @@ $(document).ready(function() {
     wordcloud_out = !wordcloud_out;
    }
   });
+
+////////// CONTENT //////////////
   var content_subclasses = {"about": {"color_start": "#363B7D",
                                       "color_hover": "#1D2060",
-                                      "color_content":"#F0F8FF",
+                                      "color_content":"lightblue",
                                       "id": 0
                                      },
                             "projects": {"color_start": "#993460",
@@ -110,12 +117,12 @@ $(document).ready(function() {
   
   //renders first looks of content boxes
   var contentStart = function(contents, content) {
-    var content_div = $("div.content." + content);
+    var content_div = $("#" + content);
 
     content_div.css("background-color", contents[content].color_start);
     content_div.css("border", "20px solid " + contents[content].color_start);    
-    $('div.' + content + '2').css("background-color", contents[content].color_content);
-    $('div.' + content + '3').css("background-color", contents[content].color_content);
+    $('#' + content + '2').css("background-color", contents[content].color_content);
+    $('#' + content + '3').css("background-color", contents[content].color_content);
   }; 
   
   //render width of content boxes according to number of elements
@@ -147,8 +154,8 @@ $(document).ready(function() {
   //function for revealing drop
   var clickDropDeco = function(contents, content) {
     var clickDrop = function() {
-      var cache_div = $('div.content2.' + content + '2');
-      var cache_div2 = $('div.content3.' + content + '3');  
+      var cache_div = $('#' + content + '2');
+      var cache_div2 = $('#' + content + '3');  
       
       var action;
       if (contents[content].id === 0) {
@@ -181,7 +188,7 @@ $(document).ready(function() {
                                              1000,
                                              complete= function() {
                                               cache_div.hide();
-                                              $(".cloud.x1").show()
+                                              $("#x1").show()
                                                             .transition({scale: [3, 3], duration: 1500});
                                               cache_div2.show()
                                                         .transition({scale: [2.5, 10],
@@ -191,7 +198,8 @@ $(document).ready(function() {
                                                                       //allow scrolling
                                                                       $('body').css("overflow", "auto")
                                                                       //reveal progressbar percentage
-                                                                      $('.introp.progressbar').show();
+                                                                      $('#introp_progressbar').show();
+                                                                      $('#click_click').hide();
                                                                      }
                                                                     );
                                              }
@@ -221,7 +229,7 @@ $(document).ready(function() {
                            }
                        }
         );
-      //$("div.contentbox").off("click");
+      //$("#contentbox").off("click");
       return false;
     };
     return clickDrop;
@@ -232,12 +240,24 @@ $(document).ready(function() {
   
   for (var k in content_subclasses) {
     contentStart(content_subclasses, k); //div.k
-    $("div.content." + k).hover(fadeOutDeco(content_subclasses, k),
+    $("#" + k).hover(fadeOutDeco(content_subclasses, k),
                        fadeInDeco(content_subclasses, k)
                       );
-    $("div.contentbox").one("click", "div.content." + k, handler= clickDropDeco(content_subclasses, k));
+    $(document).one("click", "#" + k, handler= clickDropDeco(content_subclasses, k));
+
   }
 
-   
+//////////// Parallax clouds set-up //////////////
+  cloud_scale = [1.6, 0.7, 1.15, 0.8, 1.33,
+             0.8, 2, 0.8, 1.4, 1.2,
+             1.2, 0.5, 1.2, 2, 1.4,
+             1.5, 1.7, 0.86, 1.3, 1.8];
+  for (var i = 0; i < cloud_scale.length; i++) {
+    $('#cloud' + (i + 1)).transition({scale: [cloud_scale[i], 
+                            cloud_scale[i]],
+                        duration: 0});
+
+
+  }
 });
 

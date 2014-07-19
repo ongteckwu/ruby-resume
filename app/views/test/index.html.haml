@@ -1,0 +1,14 @@
+!!!
+%html
+	%head
+		=javascript_include_tag "test_bundle"
+		=stylesheet_link_tag "test_bundle"
+		%title
+			Test
+
+	%body
+		%div.clouds
+			- 0.upto(19) do |cloud_no|
+				%div.cloud{id: "cloud#{cloud_no + 1}", 
+						   "data" => {"0" => "top: #{@cloud_parallax[cloud_no][0]}px; left: #{@cloud_parallax[cloud_no][2]}px",
+						   			 "500" => "top: #{@cloud_parallax[cloud_no][1] + @cloud_parallax[cloud_no][0]}px;"}}

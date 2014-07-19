@@ -5,7 +5,7 @@
 body {
   overflow: hidden;
   height: 2500px;
-  //background-color: #F0F8FF;
+  //background-color: lightblue;
 }
 
 div#test {
@@ -27,12 +27,12 @@ div.intro2 {
   background-color: #2A4D6E;
 }
 
-div.intro2[name="in1"] {
+div.intro2#in1 {
   border-radius: 30px;
   opacity: 0.05;
   z-index: 101;
 }
-div.intro2[name="in2"] {
+div.intro2#in2 {
   border-radius: 30px;
   opacity: 0.2;
   z-index: 102;
@@ -50,27 +50,32 @@ p.introp {
   text-align: center;
 }
 
-p.introp.titlename {
+p#introp_titlename {
   left: 2.5%;
 }
 
-p.introp.progressbar {
+p#introp_progressbar {
   left: 45%;
   display: none;
 }
 
-
+#click_click {
+  position: absolute;
+  margin: auto;
+  top: 16.2%;
+  left: 21.8%;
+}
 div.contentbox {
   position:  relative;
   text-align: center;
 }
 
-div.content.about {
+.content#about {
   margin-left: auto;
 }
 
 
-div.content {
+.content {
   position: relative;
   display:  inline-block;
   height:  180px;
@@ -80,12 +85,13 @@ div.content {
 
   margin-left: 5px;
   margin-right: 5px;
+  cursor: pointer;
 
 }
 
  
 /* The ghost, nudged to maintain perfect centering */
-div.content:before {
+.content:before {
   content: '';
   display: inline-block;
   height: 15%;
@@ -98,7 +104,7 @@ div.content p {
   color: white;
 }
 
-div.contentbox2 {
+div#contentbox2 {
   position: relative;
   margin-left: 20%;
 }
@@ -119,17 +125,23 @@ div.content3 {
   width:  65%;
 }
 
+.cloud#x1 {
+  left: 40%;
+}
+
+
 .infobox {
   position: absolute;
   top: 900px; bottom: 0; right: 0; left: 0;
   text-align: center;
   margin: auto;
+  z-index: 9;
 }
 
 
 .info {
   vertical-align: top;
-  border: 8px solid #F0F8FF;
+  border: 8px solid lightblue;
   border-radius: 30px;
   text-align: center;
 }
@@ -140,32 +152,32 @@ div.infox {
   display: inline-block;
 }
 
-div.info.info1 {
+div.info#info1 {
   display: inline-block;
   width: 334px;
   height: 600px;
   background-color: #255E69;
 }
 
-div.info.info2 {
+div.info#info2 {
   width: 334px;
   height: 193px;
   background-color: #AA4339;
 }
 
-div.info.info3 {
+div.info#info3 {
   width: 334px;
   height: 391px;
   background-color: #2B803E;
 }
 
-div.info.info4 {
+div.info#info4 {
   width: 334px;
   height: 193px;
   background-color: #AA6439;
 }
 
-div.info.info5 {
+div.info#info5 {
   width: 334px;
   height: 391px;
   background-color: #2F3F73;
@@ -200,13 +212,24 @@ div.info p.infotitle#title3 {
   font-size: 30px;
 }
 
+
+.cloudxs {
+  top: 1200px;
+  position: relative;
+}
+
+.cloudx {
+  position: absolute;
+}
+
+
 div.skills_and_interests {
   position: relative;
   top: 600px;
   vertical-align: top;
   text-align: center;
   height: 100px;
-  background-color: #F0F8FF;
+  background-image: url("x");
   font-family: Futura;
   z-index: 100;
   height: 300px;

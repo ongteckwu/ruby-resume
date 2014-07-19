@@ -1,0 +1,66 @@
+!!!
+%html
+    %head
+        %title Ong Teck Wu
+        = javascript_include_tag "teckwu_bundle"
+        = stylesheet_link_tag "teckwu_bundle"
+
+%body#skrollr-body
+    #test
+    .intro
+    #in1.intro2
+    #in2.intro2{"data-0" => "display: none;", "data-2500" => "width: 98.8%;", "data-93" => "width: 3.7%;\n                                   display: inline;"}
+
+    %p#introp_titlename.introp Ong Teck Wu
+    %p#introp_progressbar.introp Scroll Down
+
+    = image_tag "click-click.jpg", :id => "click_click"
+    .contentbox{"data-0" => "top: 0px", "data-150" => "top: 150px"}
+        #about.content{"data-0" => "transform:scale(1);left:0%;", "data-150" => "transform:scale(0); left:18%;"}
+            %p About
+        #projects.content{"data-0" => "transform:scale(1) rotate(0deg);", "data-150" => "transform:scale(0) rotate(900deg);"}
+            %p Projects
+        #reading_list.content{"data-0" => "transform:scale(1);right:0%;", "data-150" => "transform:scale(0); right:18%;"}
+            %p Readings
+
+    #contentbox2
+        #about2.content2
+        #about3.content3
+        #projects2.content2
+        #projects3.content3
+        #reading_list2.content2
+        #reading_list3.content3
+
+    #x1.cloud{"data-0" => "top:-3%", "data-300" => "top:-75%;"}
+
+    .infobox{"data-150" => "top:150px;", "data-200" => "top:268px;", "data-250" => "top:318px;"}
+
+        #info1.info{"data-150" => "transform: scale(0);", "data-225" => "transform: scale(1);", "data-323" => "transform: scale(1);", "data-550" => "transform: scale(0);"}
+            %p#title1.infotitle Who Am I?
+            %p{:name => "content"} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non congue lacus, sed pulvinar lorem. Nam eu iaculis metus. Fusce interdum, nisl a porta congue, lorem felis aliquam elit, consequat porta augue nisl in justo. Pellentesque bibendum lacinia aliquam. Maecenas ultrices metus at vulputate iaculis. Donec malesuada id lacus id pretium. Nunc hendrerit odio lacus, nec dictum velit sollicitudin sit amet. Aenean in eros sed orci luctus semper eu sit amet turpis. Nulla varius leo id metus malesuada, sed placerat mauris vulputate. Nunc varius orci in enim euismod, at vestibulum justo adipiscing.
+
+        .infox
+            #info2.info{"data-150" => "transform: scale(0);", "data-225" => "transform: scale(1);", "data-316" => "transform: scale(1);", "data-550" => "transform: scale(0);"}
+                %p#title2.infotitle What's Up!
+                %p{:name => "content"} dafdsf
+
+            #info3.info{"data-150" => "transform: scale(0);", "data-225" => "transform: scale(1);", "data-316" => "transform: scale(1);", "data-550" => "transform: scale(0);"}
+                %p#title3.infotitle Where I've Worked!
+                %p{:name => "content"} dafdsf
+
+        .infox
+            #info4.info{"data-150" => "transform: scale(0);", "data-225" => "transform: scale(1);", "data-316" => "transform: scale(1);", "data-550" => "transform: scale(0);"}
+                %p#title2.infotitle Care To Share?
+                %p{:name => "content"} dafdsf
+
+            #info5.info{"data-150" => "transform: scale(0);", "data-225" => "transform: scale(1);", "data-316" => "transform: scale(1);", "data-550" => "transform: scale(0);"}
+                %p#title3.infotitle Have A Nice Day!
+                %p{:name => "content"} dafdsf
+
+    %div.cloudxs
+        -0.upto(19) do |cloud_no|
+            %div.cloud.cloudx{"id" => "cloud#{cloud_no + 1}", "data-700" => "top: #{@cloud_parallax[cloud_no][0]}px; left: #{@cloud_parallax[cloud_no][2]}px","data-1500" => "top: #{@cloud_parallax[cloud_no][1]}px;"}
+
+    .skills_and_interests
+        %p{"data-1050" => "opacity:1;", "data-1250" => "opacity:0;", "data-650" => "opacity:0;", "data-850" => "opacity:1;"}Skills And Interests
+    %canvas#wordcloud
