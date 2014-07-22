@@ -36,7 +36,7 @@
 									%a.li-color{:href => "#"} Messages
 
 						
-						%form.navbar-form.navbar-right{role: "search"}
+						%form.navbar-form.hidden-xs.navbar-right{role: "search"}
 							.form-group{style: "display:inline;"}
 								.input-group
 									%input.form-control{:type => "text", :placeholder => "Search"}
@@ -51,32 +51,33 @@
 					/ %a.btn.btm-primary.btm-lg{:role => "button", :href => "#"} Learn More
 			
 
-		.container-fluid#test
+		.container
 			.row
-				.col-xs-12
-					%h1 Lorem ipsum dolor sit amet, consectetur.
-			.row
-				.col-xs-8
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, vel.
-				.col-xs-4 
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic earum repellat, doloremque itaque illum <mark> assumenda </mark> tempora suscipit numquam voluptate repudiandae deserunt voluptas iure dolore tempore saepe molestiae ipsam sunt, praesentium!
-			.row 
-				.col-xs-6
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, ratione soluta aliquid!
-				.col-xs-6
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae laudantium aut, ducimus corrupti. lorem12
-			.row
-				.col-xs-5
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, unde possimus illum!	
-				.col-xs-7
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro sed, sunt totam?
-			.row
-				.col-xs-8
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque assumenda laboriosam possimus veniam.
-				.col-xs-4
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis excepturi saepe impedit a sint, quidem maiores porro facere deserunt dignissimos?
-			.row
-				.col-xs-4
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt ratione repellat veritatis voluptatem voluptate laboriosam mollitia quia sed at possimus! Dignissimos natus nisi harum modi eos. Aliquid eius, perspiciatis velit eos debitis sequi quos autem, est deserunt accusantium doloremque quae.
-				.col-xs-8
-					%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus quae repudiandae accusantium perspiciatis non debitis quo saepe consequuntur iure voluptates.
+				//blog-posts
+				.col-sm-8.col-xs-12.blog-posts
+					//sample blog post
+					.blog-post
+						%h2.blog-post-title
+							%a{:href => "#"}  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, eligendi.
+						%p.blog-post-meta 
+							By
+							%a{:href => ""}Ong Teck Wu 
+							| 22 July 2014
+						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo impedit, quos. Impedit eius ea vitae fugit dolorum aliquid, quae officia iste totam deleniti quibusdam velit sed tempora ipsum aut animi!
+
+						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptas qui neque, doloribus maiores.
+
+						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt aliquam autem, officia, sapiente quis, libero dignissimos rerum nostrum perferendis modi dolor quisquam, in aspernatur corrupti qui eveniet ipsum dolorem odio ullam fugiat adipisci ipsam fugit. Obcaecati voluptatum dolor nisi odit.
+
+						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, odit. Ducimus nulla illum, soluta vitae nobis hic. Nostrum adipisci, placeat eveniet impedit ipsum nesciunt soluta aliquam. Provident consectetur, qui reprehenderit a cum corrupti ipsum praesentium fugit exercitationem at minima quaerat autem porro possimus inventore corporis repellat. Distinctio, minus cupiditate maiores eaque et aliquam accusantium praesentium harum! Quam earum architecto aut?
+				//blog-sidebar
+				.col-sm-3.col-xs-12
+					#about-blog
+						%h4 About
+						%p   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate numquam, illo perferendis iusto vero consequatur quibusdam excepturi! Amet, velit, obcaecati. Ut quibusdam odit excepturi nesciunt non perferendis rerum nemo voluptatem.
+					#categories
+						%h4#category-title CATEGORIES
+						%a.category-name{:href => "#"} 
+							Lorem ipsum
+							%span.category-num (1) 
+

@@ -37,8 +37,62 @@ form.navbar-form {
 	padding-bottom: 5px;
 }
 
+.jumbotron#jumbo h1 {
+	font-size: 5em;
+}
+
 .jumbotron#jumbo h2 {
 	position: relative;
 	top: -30px;
 	font-size: 2.1em;
+}
+
+//Blog Body
+
+.blog-posts {
+	margin-top: -20px;
+	font-size: 18px;
+	line-height: 1.5;
+	margin-right: 40px;
+}
+
+.blog-post-title a{
+	color: #43857C;
+	font-size: 1.2em;
+}
+
+.blog-post-title a:hover {
+	color: #520008;
+}
+
+.blog-post-meta {
+	margin-top: -5px;
+	font-size: 0.9em;
+	color: grey;
+	margin-bottom: 20px;
+}
+
+.blog-post-meta a {
+	color: #A43741;
+}
+
+//about
+
+#about-blog {
+	background-color: #f5f5f5;
+	padding: 15px;
+	margin: 0 -20px 20px;
+	border-radius: 4px;
+}
+
+//categories
+#categories {
+	margin-top: 40px;
+}
+.category-name{
+	color: #7B151E;
+}
+
+.category-name:hover {
+	color: red;
 }
