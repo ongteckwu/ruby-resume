@@ -4,7 +4,9 @@
 
 body {
   overflow: hidden;
+  overflow-x: hidden;
   height: 2500px;
+  width: 100%;
   //background-color: lightblue;
 }
 
@@ -126,7 +128,7 @@ div.content3 {
 }
 
 .cloud#x1 {
-  left: 40%;
+  margin-left: 40%;
 }
 
 

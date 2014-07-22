@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  get 'bootstraptest/index'
+  get 'bootstraptest/quotes'
   get 'test/index'
-
   get 'teckwu/index'
   root 'teckwu#index'
 

@@ -49,6 +49,7 @@ $(document).ready(function() {
   var scrolled = false;
   var progress_bar_100 = $("body").height() - $(window).height();
   $(document).on("scroll", document, function() {
+    $(this).scrollLeft(0);
     if (!scrolled) {
       $("#introp_progressbar").css("left", "48.8%");
       scrolled = !scrolled;
