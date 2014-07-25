@@ -9,7 +9,9 @@ class BootstraptestController < ApplicationController
   						 .limit(5)
   						 .offset((@id-1) * 5)
   	#disable "Older" if last element of @blogposts is of id=1
-  	@older_disable = true if @blogposts[-1][:id] == 1
+  	unless @blogposts.empty?
+  		@older_disable = true if @blogposts[-1][:id] == 1
+  	end
   end
 
 
@@ -21,7 +23,7 @@ class BootstraptestController < ApplicationController
   	@blogpost = Blogpost.new permitted_blogpost_attributes
 
   	if @blogpost.save
-  		redirect_to "index"
+  		redirect_to action: "index"
   	else
   		render action: "new"
   	end

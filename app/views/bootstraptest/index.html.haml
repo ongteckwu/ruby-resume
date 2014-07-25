@@ -20,6 +20,8 @@
 				//blog-posts
 				.col-sm-8.col-xs-12.blog-posts
 					//sample blog post
+					- if @blogposts.empty?
+						%p#nothing Nothing to be found here!
 					- @blogposts.each do |bp|
 						.blog-head
 							%h2.blog-post-title
