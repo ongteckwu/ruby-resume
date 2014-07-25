@@ -1,0 +1,31 @@
+!!!
+%html
+	
+	= render "head", locals: {title: "bootstraptest"} 
+	=stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+
+	%body
+
+		%header
+			= render "navbar"
+
+		.container#new-form-container
+			.row
+				.col-xs-12.col-sm-8
+					%h1#new-post New Post
+					%hr
+					= form_for @blogpost, url: bootstraptest_index_path, html: {class:"form"} do |b|
+						.form-group
+							= b.label :title, class: "form-label"
+							= b.text_field(:title, class: "form-control", placeholder: "Title") 
+							- if @blogpost.errors[:title]
+								- @blogpost.errors[:title].each do |m|
+									%p.form-error-message= "#{m}"
+						.form-group
+							= b.label :content, class: "form-label"
+							= b.text_area(:content, class: "form-control", rows: "10", placeholder: "Your Content")
+							- if @blogpost.errors[:content]
+								- @blogpost.errors[:content].each do |m|
+									%p= "#{m}"
+
+						= b.submit(value: "Submit Post")

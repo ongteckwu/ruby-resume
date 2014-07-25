@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'bootstraptest/index'
+  resources :bootstraptest
+  get 'bootstraptest/page/:id' => "bootstraptest#index", as: :bootstraptest_page
   get 'bootstraptest/quotes'
   get 'test/index'
   get 'teckwu/index'

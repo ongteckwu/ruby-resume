@@ -7,43 +7,7 @@
 	%body
 
 		%header
-			%nav.navbar-fixed-top
-				.container-fluid#navbarhead
-					.navbar-header
-						%button#shrunkbutton.navbar-toggle{:type => "button", :data => {:toggle => "collapse", :target => "#navbar-target"}}
-							%span.sr-only Toggle navigation
-							%span.icon-bar
-							%span.icon-bar
-							%span.icon-bar
-					.row
-						.collapse.navbar-collapse#navbar-target.col-xs-6
-							%ul.nav.navbar-nav
-								%li.active.dropdown
-									%a.li-color.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"} 
-										Home
-										%span.caret-margin.caret
-									%ul.dropdown-menu{:role => "menu"}
-										%li
-											%a{:href => "#"}Something
-										%li
-											%a{:href => "#"}Something
-										%li.divider
-										%li
-											%a{:href => "#"}Something else
-								%li
-									%a.li-color{:href => "#"} Profile
-								%li
-									%a.li-color{:href => "#"} Messages
-
-						
-						%form.navbar-form.hidden-xs.navbar-right{role: "search"}
-							.form-group{style: "display:inline;"}
-								.input-group
-									%input.form-control{:type => "text", :placeholder => "Search"}
-									%span.input-group-addon
-										%a{:href => ""}
-											%span.glyphicon.glyphicon-search
-
+			= render "navbar"
 			.jumbotron#jumbo
 				.container
 					%h1 Teck Wu's Blog
@@ -56,20 +20,31 @@
 				//blog-posts
 				.col-sm-8.col-xs-12.blog-posts
 					//sample blog post
-					.blog-post
-						%h2.blog-post-title
-							%a{:href => "#"}  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, eligendi.
-						%p.blog-post-meta 
-							By
-							%a{:href => ""}Ong Teck Wu 
-							| 22 July 2014
-						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo impedit, quos. Impedit eius ea vitae fugit dolorum aliquid, quae officia iste totam deleniti quibusdam velit sed tempora ipsum aut animi!
+					- @blogposts.each do |bp|
+						.blog-head
+							%h2.blog-post-title
+								%a{:href => "#"}= bp[:title] 
+							%p.blog-post-meta
+								By
+								%a{:href => ""}Ong Teck Wu
+								| 
+								= bp[:created_at].to_formatted_s(:long_ordinal)
+								|
+								= bp[:id]
+							.truncated-blog-post
+								=truncate bp[:content], length: 120, seperator: ' '
+							%a.read-more{:href => "#"}
+								Read More...
+								%span.arrow-down
 
-						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptas qui neque, doloribus maiores.
+							.blog-post.blog-post-show
+								%p= bp[:content]
+								%a.read-less{:href => '#'} 
+									Read Less...
+									%span.arrow-up
+							%hr
 
-						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt aliquam autem, officia, sapiente quis, libero dignissimos rerum nostrum perferendis modi dolor quisquam, in aspernatur corrupti qui eveniet ipsum dolorem odio ullam fugiat adipisci ipsam fugit. Obcaecati voluptatum dolor nisi odit.
 
-						%p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, odit. Ducimus nulla illum, soluta vitae nobis hic. Nostrum adipisci, placeat eveniet impedit ipsum nesciunt soluta aliquam. Provident consectetur, qui reprehenderit a cum corrupti ipsum praesentium fugit exercitationem at minima quaerat autem porro possimus inventore corporis repellat. Distinctio, minus cupiditate maiores eaque et aliquam accusantium praesentium harum! Quam earum architecto aut?
 				//blog-sidebar
 				.col-sm-3.col-xs-12
 					#about-blog
@@ -80,4 +55,9 @@
 						%a.category-name{:href => "#"} 
 							Lorem ipsum
 							%span.category-num (1) 
-
+				.col-xs-12
+					%ul.pager
+						%li.previous{class: ("disabled" if @id == 1)}	
+							=link_to "Newer", bootstraptest_page_path((@id - 1).to_s), class: "page_to", id: "page_#{@id}"
+						%li.next{class: ("disabled" if @older_disable)}
+							=link_to "Older", bootstraptest_page_path((@id + 1).to_s), class: "page_to", id: "page_#{@id}"

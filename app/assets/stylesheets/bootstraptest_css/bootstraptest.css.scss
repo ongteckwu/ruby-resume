@@ -56,6 +56,7 @@ form.navbar-form {
 	margin-right: 40px;
 }
 
+
 .blog-post-title a{
 	color: #43857C;
 	font-size: 1.2em;
@@ -76,6 +77,32 @@ form.navbar-form {
 	color: #A43741;
 }
 
+.read-more, .read-less {
+	color: #805B15;
+}
+
+.read-more:hover, .read-less:hover {
+	color: #553800;
+}
+
+.arrow-down, .arrow-up {
+	position: relative;
+	width: 0px;
+	height: 0px;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	
+}
+
+.arrow-down {
+	top: 15px;
+	border-top: 9px solid #805B15;
+}
+
+.arrow-up {
+	bottom: 14px;
+	border-bottom: 9px solid #805B15;
+}
 //about
 
 #about-blog {
@@ -84,6 +111,12 @@ form.navbar-form {
 	margin: 0 -20px 20px;
 	border-radius: 4px;
 }
+
+.blog-post-show{
+	position: absolute;
+	display: none;
+}
+
 
 //categories
 #categories {
@@ -94,5 +127,44 @@ form.navbar-form {
 }
 
 .category-name:hover {
+	color: red;
+}
+
+//forms
+
+/* Flaired edges, by Tomas Theunissen */
+		
+hr.style-seven {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;    
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+#new-post {
+	color: #A43741;
+	font-size: 3em;
+}
+#new-form-container {
+	margin-top: 100px;
+}
+
+.form-label {
+	color: #43857C;
+	font-size: 1.6em;
+}
+
+.form-error-message {
 	color: red;
 }

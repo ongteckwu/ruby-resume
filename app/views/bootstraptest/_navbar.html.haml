@@ -1,0 +1,36 @@
+%nav.navbar-fixed-top
+	.container-fluid#navbarhead
+		.navbar-header
+			%button#shrunkbutton.navbar-toggle{:type => "button", :data => {:toggle => "collapse", :target => "#navbar-target"}}
+				%span.sr-only Toggle navigation
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+		.row
+			.collapse.navbar-collapse#navbar-target.col-xs-6
+				%ul.nav.navbar-nav
+					%li.active.dropdown
+						%a.li-color.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"} 
+							Home
+							%span.caret-margin.caret
+						%ul.dropdown-menu{:role => "menu"}
+							%li
+								%a{:href => "#"}Something
+							%li
+								%a{:href => "#"}Something
+							%li.divider
+							%li
+								%a{:href => "#"}Something else
+					%li
+						%a.li-color{:href => "#"} Profile
+					%li
+						%a.li-color{:href => "#"} Messages
+
+			
+			%form.navbar-form.hidden-xs.navbar-right{role: "search"}
+				.form-group{style: "display:inline;"}
+					.input-group
+						%input.form-control{:type => "text", :placeholder => "Search"}
+						%span.input-group-addon
+							%a{:href => ""}
+								%span.glyphicon.glyphicon-search
