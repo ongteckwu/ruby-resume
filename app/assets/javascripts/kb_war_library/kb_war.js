@@ -38,7 +38,7 @@ var eventLoop = function() {
 	var alphabetColoursKeys = Object.keys(alphabetColours);
 	var haveLost = false;
 	//stops level
-	var levelBreaker = false;
+	var levelBreakers = [];
 	/*
 	Type of queue:
 		It's either a queue structure or a pseudo-queue.
@@ -88,15 +88,7 @@ var eventLoop = function() {
 	startKeyDown();
 
 	var levelInterval = function(spawnSpeed, blockSpeed) {
-		setInterval(function() {
-			//stop javascript if page != gamestart || game is lost || next level reached
-			if (levelBreaker || haveLost || $("body").data("title") !== "game") {
-				//reset breaker
-				console.log("Level Broke!")
-				levelBreaker = false;
-				return;
-			}
-
+		levelBreakers.push(setInterval(function() {
 			var $alphaBoard = $("#alpha-board");
 
 			//get a random alphabet
@@ -143,7 +135,7 @@ var eventLoop = function() {
 
 			//add object into cache
 			alphabetsObjectQueue.push($currentAlphaBlock);
-		}, spawnSpeed);
+		}, spawnSpeed));
 	}
 
 	//level variables
@@ -151,27 +143,51 @@ var eventLoop = function() {
 	var thisLevel = currentLevel;
 	var thisBlockSpeed = blockSpeed; //0.98
 	var thisSpawnSpeed = spawnSpeed; //0.99
-	setInterval(function() {
+	var thisLevelDifficulty = 2 // Means that 2 threads running at a time
+						    	// every 10 levels increase by 1
+
+	//activate level loop
+	var selfBreaker = setInterval(function() {
+		//stops game if lost
+		if (haveLost || $("body").data("title") !== "game") {
+			window.clearInterval(selfBreaker); //breaks self
+			//clear all levels
+			for (var i in levelBreakers) {
+				window.clearInterval(levelBreakers[i]);
+			}
+		}
 
 		if (alphabetsCount >= thisLevelRequirement) {
-			if (thisLevel > 1) {
-				//stop level. This will be reset internally
-				levelBreaker = true;
-			}
 			console.log("-------------------")
 			console.log("Level " + thisLevel);
-			console.log(thisLevelRequirement);
+			console.log("Threads: " + levelBreakers.length);
 
 			//run next level
 			levelInterval(thisSpawnSpeed, thisBlockSpeed);
 
-			//set next level requirement and settings
+			//render level
+			$("#alpha-level").html("Level " + thisLevel);
+			//pop a thread. Based on thisLevelDifficulty.
+			if (levelBreakers.length >= thisLevelDifficulty  ) {
+				console.log("Thread popped.");
+				window.clearInterval(levelBreakers.shift());
+			}
+
+			//increase level
 			thisLevel++;
-			thisLevelRequirement += 5;
+
+			//increase level difficulty if requirement met
+			if (thisLevel % 7 == 0) {
+				console.log("Level difficulty increased!");
+				thisLevelDifficulty += 1;
+				thisSpawnSpeed *= 1.3;
+			}
+			//set next level requirement and settings
+			thisLevelRequirement += 2;
 			thisBlockSpeed *= 0.99;
 			thisSpawnSpeed *= 0.98;
 		}
-	}, 1000)
+	}, 500)
 	
 }
 

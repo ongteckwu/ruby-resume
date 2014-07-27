@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'kb_war/index'
+  get 'kb_war' => "kb_war#index"
   get 'kb_war/gamestart'
 
   resources :blog

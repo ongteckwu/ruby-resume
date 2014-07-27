@@ -244,8 +244,9 @@ $(document).ready(function() {
     $("#" + k).hover(fadeOutDeco(content_subclasses, k),
                        fadeInDeco(content_subclasses, k)
                       );
-    $(document).one("click", "#" + k, handler= clickDropDeco(content_subclasses, k));
-
+    if (k == "about") {
+      $(document).one("click", "#" + k, handler= clickDropDeco(content_subclasses, k));
+    }
   }
 
 //////////// Parallax clouds set-up //////////////
