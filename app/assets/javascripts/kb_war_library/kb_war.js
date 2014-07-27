@@ -104,7 +104,10 @@ var eventLoop = function() {
 			var $currentAlphaBlock = $alphaBoard.children("." + alphaBlockClass).slice(0, 1)
 
 			//set position
-			$currentAlphaBlock.css("left", String(Math.random() * ($alphaBoard.width())) + "px");
+			var spawnLocation = function(start, end) {
+				return start + Math.random() * (end - start);
+			};
+			$currentAlphaBlock.css("left", String(spawnLocation(230, $alphaBoard.width() - 50)) + "px");
 			$currentAlphaBlock.css("top", "50px");
 
 			//set color| dark, light
@@ -141,8 +144,8 @@ var eventLoop = function() {
 	//level variables
 	var thisLevelRequirement = initialLevelRequirement;
 	var thisLevel = currentLevel;
-	var thisBlockSpeed = blockSpeed; //0.98
-	var thisSpawnSpeed = spawnSpeed; //0.99
+	var thisBlockSpeed = blockSpeed; //10000
+	var thisSpawnSpeed = spawnSpeed; //1000
 	var thisLevelDifficulty = 2 // Means that 2 threads running at a time
 						    	// every 10 levels increase by 1
 
@@ -150,11 +153,13 @@ var eventLoop = function() {
 	var selfBreaker = setInterval(function() {
 		//stops game if lost
 		if (haveLost || $("body").data("title") !== "game") {
-			window.clearInterval(selfBreaker); //breaks self
 			//clear all levels
+			window.clearInterval(selfBreaker); //breaks self
 			for (var i in levelBreakers) {
 				window.clearInterval(levelBreakers[i]);
 			}
+			return;
+
 		}
 
 		if (alphabetsCount >= thisLevelRequirement) {
@@ -177,15 +182,15 @@ var eventLoop = function() {
 			thisLevel++;
 
 			//increase level difficulty if requirement met
-			if (thisLevel % 7 == 0) {
+			if (thisLevel % 5 == 0) {
 				console.log("Level difficulty increased!");
 				thisLevelDifficulty += 1;
-				thisSpawnSpeed *= 1.3;
+				thisSpawnSpeed *= 1.4;
 			}
 			//set next level requirement and settings
-			thisLevelRequirement += 2;
+			thisLevelRequirement += 3;
 			thisBlockSpeed *= 0.99;
-			thisSpawnSpeed *= 0.98;
+			thisSpawnSpeed *= 0.97;
 		}
 	}, 500)
 	
