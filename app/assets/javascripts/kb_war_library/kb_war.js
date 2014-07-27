@@ -185,7 +185,7 @@ var eventLoop = function() {
 			if (thisLevel % 5 == 0) {
 				console.log("Level difficulty increased!");
 				thisLevelDifficulty += 1;
-				thisSpawnSpeed *= 1.4;
+				thisSpawnSpeed *= 1.3;
 			}
 			//set next level requirement and settings
 			thisLevelRequirement += 3;
