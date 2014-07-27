@@ -1,7 +1,7 @@
 !!!
 %html
 	
-	= render "head", locals: {title: "bootstraptest"} 
+	= render "head", locals: {title: "new blogpost"} 
 	=stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 
 	%body
@@ -14,7 +14,7 @@
 				.col-xs-12.col-sm-8
 					%h1#new-post New Post
 					%hr
-					= form_for @blogpost, url: bootstraptest_index_path, html: {class:"form"} do |b|
+					= form_for @blogpost, url: blog_index_path, html: {class:"form"} do |b|
 						.form-group
 							= b.label :title, class: "form-label"
 							= b.text_field(:title, class: "form-control", placeholder: "Title") 

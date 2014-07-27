@@ -1,7 +1,7 @@
 !!!
 %html
 	
-	= render "head", locals: {title: "bootstraptest"} 
+	= render "head", locals: {title: "blog"} 
 	=stylesheet_link_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 
 	%body
@@ -13,7 +13,7 @@
 					%h1 Teck Wu's Blog
 					%h2.lead I talk about everything I know. Generally code.
 					/ %a.btn.btm-primary.btm-lg{:role => "button", :href => "#"} Learn More
-			
+		
 
 		.container
 			.row
@@ -30,11 +30,11 @@
 								By
 								%a{:href => ""}Ong Teck Wu
 								| 
-								= bp[:created_at].to_formatted_s(:long_ordinal)
+								= bp.long_ordinal
 								|
 								= bp[:id]
 							.truncated-blog-post
-								=truncate bp[:content], length: 120, seperator: ' '
+								= bp.truncated_post(150)
 							%a.read-more{:href => "#"}
 								Read More...
 								%span.arrow-down
@@ -45,7 +45,6 @@
 									Read Less...
 									%span.arrow-up
 							%hr
-
 
 				//blog-sidebar
 				.col-sm-3.col-xs-12
@@ -60,6 +59,6 @@
 				.col-xs-12
 					%ul.pager
 						%li.previous{class: ("disabled" if @id == 1)}	
-							=link_to "Newer", bootstraptest_page_path((@id - 1).to_s), class: "page_to", id: "page_#{@id}"
+							=link_to "Newer", blog_page_path((@id - 1).to_s), class: "page_to", id: "page_#{@id}"
 						%li.next{class: ("disabled" if @older_disable)}
-							=link_to "Older", bootstraptest_page_path((@id + 1).to_s), class: "page_to", id: "page_#{@id}"
+							=link_to "Older", blog_page_path((@id + 1).to_s), class: "page_to", id: "page_#{@id}"

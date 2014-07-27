@@ -1,0 +1,25 @@
+%html
+	
+	= render "head"
+
+%body{:data => {:title => "main"}}
+	.container-fluid
+		.row
+			.col-xs-12#kb-war
+				%p Keyboard Warrior!
+	.container
+		.row
+			.col-xs-12
+				=link_to("Start", kb_war_gamestart_path, class: "center-block btn btn-default btn-lg", id: "block", type: "button", role: "button")
+			.col-xs-8.col-xs-offset-2#instructions
+				%p Keys will appear from the top of the window. 
+				%p Tap the appropriate keyboard button to make a key disappear. 
+				%p.lead Do it fast, or else you will lose the game!
+	
+	%footer
+		.container
+			.row
+				.col-xs-12#footer
+					.row
+						.col-xs-2.col-xs-offset-10#footer-otw
+							%p By Ong Teck Wu

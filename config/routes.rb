@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :bootstraptest
-  get 'bootstraptest/page/:id' => "bootstraptest#index", as: :bootstraptest_page
-  get 'bootstraptest/quotes'
+  get 'kb_war/index'
+  get 'kb_war/gamestart'
+
+  resources :blog
+  get 'blog/page/:id' => "blog#index", as: :blog_page
+  get 'blog/quotes'
   get 'test/index'
   get 'teckwu/index'
   root 'teckwu#index'

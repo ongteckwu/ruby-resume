@@ -1,0 +1,17 @@
+%html
+	
+	= render "head"
+
+%body{:data => {:title => "game"}}
+	.container#alpha-board
+		.row
+			.col-xs-12.text-center#you-lose
+				%p#you-lose-title You Lose.
+				%p Final Score:
+				%p#you-lose-final-score 0
+	.container#alphabets-count
+		.row
+			.col-xs-12.text-center#alphabets-count-text
+				%p Level 1
+				%p Alphabets Count:
+				%p#alpha-count 0

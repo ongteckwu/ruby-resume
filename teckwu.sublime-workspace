@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"Facto",
+				"FactoryGirl"
+			],
+			[
+				"befo",
+				"before_each_context_create_post"
+			],
+			[
+				"blo",
+				"blog-post-show"
+			],
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
 				"backgr",
 				"background-color"
 			],
@@ -84,89 +100,69 @@
 	"buffers":
 	[
 		{
-			"file": "app/assets/stylesheets/bootstraptest_css/bootstraptest.css.scss",
+			"file": "app/models/blogpost.rb",
 			"settings":
 			{
-				"buffer_size": 1185,
+				"buffer_size": 216,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/utilities_css/bootstrap.min.css",
+			"file": "db/migrate/20140726083035_add_blogpost_id_to_comment.rb",
 			"settings":
 			{
-				"buffer_size": 109518,
+				"buffer_size": 185,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/bootstraptest/_head.html.haml",
+			"file": "app/models/comment.rb",
 			"settings":
 			{
-				"buffer_size": 379,
+				"buffer_size": 61,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <title>Bootstrap 101 Template</title>\n\n    <!-- Bootstrap -->\n    <link href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css\" rel=\"stylesheet\">\n\n    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->\n    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->\n    <!--[if lt IE 9]>\n      <script src=\"https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js\"></script>\n      <script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>\n    <![endif]-->\n  </head>\n  <body>\n    <h1>Hello, world!</h1>\n\n\n    <!-- Include all compiled plugins (below), or include individual files as needed -->\n    <script src=\"js/bootstrap.min.js\"></script>\n\n    <div class=\"container-fluid\">\n    	<div class=\"row\">\n    		<div class=\"col-xs-4\">A</div>\n    		<div class=\"col-xs-8\">B</div>\n    	</div>\n    </div>\n  </body>\n</html>",
-			"file": "/Users/ongteckwu/Downloads/Unknown 2/test.html",
-			"file_size": 1259,
-			"file_write_time": 130504188040000000,
+			"file": "spec/models/blogposts_spec.rb",
 			"settings":
 			{
-				"buffer_size": 1099,
-				"line_ending": "Unix",
-				"name": "<!-- Stack the columns on mobile by making one ful"
-			}
-		},
-		{
-			"file": "/Users/ongteckwu/Downloads/BootstrapForWebDesigner_SF/lesson-7.html",
-			"settings":
-			{
-				"buffer_size": 4397,
+				"buffer_size": 381,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/javascripts/bootstraptest_library/bootstraptest.js",
+			"file": "spec/factories/comments.rb",
 			"settings":
 			{
-				"buffer_size": 170,
+				"buffer_size": 284,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/bootstraptest/quotes.html.haml",
+			"contents": "require 'faker'\n\nFactoryGirl.define do\n	factory :blogpost do \n		title {Faker::Lorem.sentence(word_count= 5,\n									   supplemental= false,\n									   random_words_to_add= 6)}\n		content {Faker::Lorem.paragraphs(paragraph_count= 2).join(' ')}\n\n	end\nend",
+			"file": "spec/factories/blogposts.rb",
+			"file_size": 340,
+			"file_write_time": 130508491200000000,
 			"settings":
 			{
-				"buffer_size": 1842,
+				"buffer_size": 253,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/bootstraptest/index.html.haml",
+			"file": "spec/models/comment_spec.rb",
 			"settings":
 			{
-				"buffer_size": 3492,
+				"buffer_size": 427,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/assets/stylesheets/teckwu_css/teckwu.css.scss",
+			"file": ".rspec",
 			"settings":
 			{
-				"buffer_size": 3723,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "class BootstraptestController < ApplicationController\n  def quotes\n  end\n\n  def index\n  end\nend\n",
-			"file": "app/controllers/bootstraptest_controller.rb",
-			"file_size": 77,
-			"file_write_time": 130504225360000000,
-			"settings":
-			{
-				"buffer_size": 96,
+				"buffer_size": 53,
 				"line_ending": "Unix"
 			}
 		},
@@ -174,7 +170,15 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 1721,
+				"buffer_size": 1778,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/kb_war_controller.rb",
+			"settings":
+			{
+				"buffer_size": 68,
 				"line_ending": "Unix"
 			}
 		}
@@ -182,9 +186,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 373.0,
+		"height": 327.0,
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -242,13 +250,16 @@
 				"Set Syntax: Python"
 			]
 		],
-		"width": 449.0
+		"width": 487.0
 	},
 	"console":
 	{
 		"height": 126.0,
 		"history":
 		[
+			"git",
+			"git branch",
+			"`git branch",
 			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
 	},
@@ -263,10 +274,49 @@
 	},
 	"file_history":
 	[
-		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/bootstraptest/index.html.haml",
-		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/utilities_css/bootstrap.min.css",
-		"/Users/ongteckwu/teckwu_rails/teckwu/README.rdoc",
+		"/Users/ongteckwu/teckwu_rails/teckwu/Gemfile",
+		"/Users/ongteckwu/teckwu_rails/teckwu/db/test.sqlite3",
+		"/Users/ongteckwu/teckwu_rails/teckwu/db/migrate/20140726075127_create_comments.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/db/migrate/20140726083035_add_blogpost_id_to_comment.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/spec/spec_helper.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/spec/models/comment_spec.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/db/migrate/20140726082422_add_blogpost_id_to_comment.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/db/migrate/20140726082336_add_blogpost_id_to_comment.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/kb_war_css/kb_war.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/kb_war/index.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/config/application.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/.rspec",
+		"/Users/ongteckwu/teckwu_rails/teckwu/spec/blog_specs",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/blog/_head.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/kb_war_bundle.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/blog/index.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/controllers/blog_controller.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/models/blogpost.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/blog_library/blog.js",
+		"/Users/ongteckwu/Downloads/Unknown 2/test.html",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/blog_css/blog.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/blog/show.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/blog/quotes.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/db/seeds.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/blog/_navbar.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/blog/new.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/test/helpers/blog_helper_test.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/test/controllers/blog_controller_test.rb",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/helpers/blog_helper.rb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/bootstraptest_bundle.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/blog_bundle.js",
+		"/Users/ongteckwu/Downloads/BootstrapForWebDesigner_SF/lesson-7.html",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/utilities_css/bootstrap.min.css",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/bootstraptest/quotes.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/teckwu_css/teckwu.css.scss",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/teckwu/index.html.haml",
+		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/bootstraptest/index.html.haml",
+		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/User/Ruby Haml.sublime-settings",
+		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/User/SideBarGit.sublime-settings",
+		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/SideBarGit/SideBarGit.sublime-settings",
+		"/Users/ongteckwu/teckwu_rails/teckwu/README.rdoc",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/bootstraptest/_head.html.haml",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/bootstraptest/untitled.html",
 		"/Users/ongteckwu/teckwu_rails/teckwu/bin/spring",
@@ -274,11 +324,9 @@
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/bootstraptest_bundle.js",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_bundle.js",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/utilities_library/bootstrap.min.js",
-		"/Users/ongteckwu/teckwu_rails/teckwu/app/views/teckwu/index.html.haml",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_library/teckwu.js",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/teckwu_bundle.css.scss",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/bootstraptest_library/bootstraptest.js",
-		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/teckwu_css/teckwu.css.scss",
 		"/Users/ongteckwu/teckwu_rails/teckwu/lib/generators/teckwu_gen/templates/teckwu_index.html.haml.erb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/controllers/bootstraptest_controller.rb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/lib/generators/teckwu_gen/teckwu_gen_generator.rb",
@@ -307,7 +355,6 @@
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/test_bundle.css.scss",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/application.css",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_library/index.js",
-		"/Users/ongteckwu/teckwu_rails/teckwu/config/application.rb",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/utilities_library/wordcloud.js",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/teckwu_bundle",
 		"/Users/ongteckwu/teckwu_rails/teckwu/Rakefile",
@@ -328,7 +375,6 @@
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/javascripts/google_teckwu.js",
 		"/Users/ongteckwu/teckwu_rails/teckwu/app/assets/stylesheets/google_teckwu.css.scss",
 		"/Users/ongteckwu/teckwu_rails/teckwu/Gemfile.lock",
-		"/Users/ongteckwu/teckwu_rails/teckwu/Gemfile",
 		"/Users/ongteckwu/teckwu_rails/teckwu/config/environments/production.rb",
 		"/Users/ongteckwu/ruby_saas/bdd-cucumber/rottenpotatoes/features/step_definitions/movie_steps.rb",
 		"/Users/ongteckwu/ruby_saas/bdd-cucumber/rottenpotatoes/features/step_definitions/web_steps.rb",
@@ -345,9 +391,7 @@
 		"/Users/ongteckwu/ruby_saas/ruby-cal/spec/fun_with_strings_spec.rb",
 		"/Users/ongteckwu/ruby_saas/ruby-cal/lib/fun_with_strings.rb",
 		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/User/togglecolorscheme.py",
-		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+		"/Users/ongteckwu/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap"
 	],
 	"find":
 	{
@@ -358,6 +402,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -365,6 +410,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"bootstraptest",
+			"bootstrap",
+			"bootstraptest_index_path",
+			"bootstraptest",
+			"bootstraptes",
+			"bootstraptest",
+			"auto",
+			"hex",
 			"url(../../../",
 			"url(../../",
 			"url(app/assets/",
@@ -404,299 +457,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/assets/stylesheets/bootstraptest_css/bootstraptest.css.scss",
+					"file": "app/models/blogpost.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1185,
+						"buffer_size": 216,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1061,
-								1061
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1134.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/assets/stylesheets/utilities_css/bootstrap.min.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 109518,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								109518,
-								109518
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 764857.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/bootstraptest/_head.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 379,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								286,
-								286
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/ongteckwu/Downloads/Unknown 2/test.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1099,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								791,
-								791
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<!-- Stack the columns on mobile by making one ful",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 4,
-					"file": "/Users/ongteckwu/Downloads/BootstrapForWebDesigner_SF/lesson-7.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4397,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1255,
-								1255
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 97.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/assets/javascripts/bootstraptest_library/bootstraptest.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 170,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								161,
-								161
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 6,
-					"file": "app/views/bootstraptest/quotes.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1842,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								99,
-								1842
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/bootstraptest/index.html.haml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3492,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								174,
-								174
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/assets/stylesheets/teckwu_css/teckwu.css.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3723,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 9,
-					"file": "app/controllers/bootstraptest_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 96,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								91,
-								91
+								215,
+								215
 							]
 						],
 						"settings":
@@ -707,24 +485,177 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "config/routes.rb",
+					"buffer": 1,
+					"file": "db/migrate/20140726083035_add_blogpost_id_to_comment.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1721,
+						"buffer_size": 185,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								88,
-								88
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/comment.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 61,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "spec/models/blogposts_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								381,
+								381
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "spec/factories/comments.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								273,
+								273
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "spec/factories/blogposts.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "spec/models/comment_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								416,
+								416
 							]
 						],
 						"settings":
@@ -737,7 +668,99 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": ".rspec",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 53,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								30
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "config/routes.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								290,
+								290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/controllers/kb_war_controller.rb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 68,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]

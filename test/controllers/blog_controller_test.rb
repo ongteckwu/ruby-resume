@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BootstraptestControllerTest < ActionController::TestCase
+class BlogTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success

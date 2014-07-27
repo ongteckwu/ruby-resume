@@ -1,0 +1,80 @@
+body {
+	overflow: hidden;
+}
+
+#block {
+	margin-top: 0px;
+}
+
+#kb-war {
+	text-align: center;
+	margin-top : 100px;
+}
+
+#kb-war > p {
+	font-size: 11em;
+}
+
+.alpha-block {
+	position: absolute;
+	font-size: 3em;
+	width: 50px;
+	height: 50px;
+	background-color: #f5f5f5;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.35)
+}
+
+#you-lose {
+	display: none;
+}
+#you-lose > p#you-lose-title{
+	margin-top: 120px;
+	font-size: 11em;
+}
+
+#you-lose >p {
+	font-size: 3em;
+}
+#alphabets-count {
+	position: absolute;
+	top: 120px;
+	left: 8.6%;
+}
+
+#alphabets-count-text {
+	font-size: 5em;
+	opacity: 0.3;
+}
+
+.alpha-block div {
+	position: relative;
+	top: -7.5px;
+	text-align: center;
+}
+
+
+#instructions {
+	padding: 50px;
+	font-size: 1.5em;
+}
+
+#instructions > p {
+	padding-bottom: 10px;
+}
+
+#footer {
+	background-color: white;
+	border-radius: 30px;
+	box-shadow: 2px 2px 4px 0px;
+	cursor: pointer;
+
+}
+
+#footer:hover {
+	box-shadow: 0px 0px 2px 0px;
+}
+#footer-otw {
+	position: relative;
+	top: 5px;
+	font-size: 1.1em;
+}

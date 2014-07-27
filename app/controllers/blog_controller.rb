@@ -1,16 +1,14 @@
-class BootstraptestController < ApplicationController
+class BlogController < ApplicationController
   def quotes
   end
 
   def index
   	params_id = params[:id].to_i
   	@id = params_id != 0 ? params_id : 1
-  	@blogposts = Blogpost.order(created_at: :desc)
-  						 .limit(5)
-  						 .offset((@id-1) * 5)
+  	@blogposts = Blogpost.desc_blogposts(5, (@id-1) * 5)
   	#disable "Older" if last element of @blogposts is of id=1
-  	unless @blogposts.empty?
-  		@older_disable = true if @blogposts[-1][:id] == 1
+  	if @blogposts.empty? or @blogposts[-1][:id] == 1
+  		@older_disable = true
   	end
   end
 
