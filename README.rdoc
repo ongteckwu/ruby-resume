@@ -1,5 +1,5 @@
 == My rails app
 
-A resume webapp created with rails. Visit it at this link[https://ongteckwu.herokuapp.com].
+A resume webapp created with Ruby on Rails. Visit it at this link[https://ongteckwu.herokuapp.com].
 
 Within it also includes a mini-game. Visit the mini-game at link[https://ongteckwu.herokuapp.com/kb_war].
